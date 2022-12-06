@@ -1,18 +1,20 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 
-function LogModal() {
+function LogModal({ onClose2, visible2 }) {
+  if (!visible2) return null;
 
   return (
     <div className="fixed inset-0 bg-zinc-900/80 backdrop-blur-sm flex justify-center items-center z-10">
       <MdClose
+        onClick={onClose2}
         className="absolute top-0 right-0 m-10 text-2xl sm:text-4xl md:text-4xl lg:text-6xl cursor-pointer text-orange-500"
       />
       <div className="border border-gray-500 rounded-lg p-10">
         <h1 className="text-center text-3xl mb-5">SIGN IN</h1>
         <div className="flex justify-between pl-5 pr-5 mb-10">
           <p>New user?</p>
-          <p className="text-orange-500 cursor-pointer">Create an account</p>
+          <p className="text-orange-500 cursor-pointer" onClick={onClose2}>Create an account</p>
         </div>
         <form>
           <div className="grid md:grid-cols- md:gap-6">

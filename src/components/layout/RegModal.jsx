@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import logo from "../../images/logo.png";
+import LogModal from "./LogModal";
 
 function RegModal({ onClose, visible }) {
+  const [showMyModal2, setShowMyModal2] = useState(false);
+
+  const handleOnClose2 = () => setShowMyModal2(false);
+
   if (!visible) return null;
 
   return (
@@ -22,7 +27,12 @@ function RegModal({ onClose, visible }) {
         <h1 className="text-center text-3xl mb-5">CREATE AN ACCOUNT</h1>
         <div className="flex justify-between pl-5 pr-5 mb-5">
           <p>Already have an account?</p>
-          <p className="text-orange-500 cursor-pointer">Sign In</p>
+          <p
+            className="text-orange-500 cursor-pointer"
+            onClick={() => setShowMyModal2(true)}
+          >
+            Sign In
+          </p>
         </div>
         <form>
           <div className="grid md:grid-cols-2 md:gap-6">
@@ -118,6 +128,7 @@ function RegModal({ onClose, visible }) {
           </div>
         </form>
       </div>
+      <LogModal onClose2={handleOnClose2} visible2={showMyModal2} />
     </div>
   );
 }

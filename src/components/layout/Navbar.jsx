@@ -11,7 +11,7 @@ function Navbar() {
   const handleOnClose = () => setShowMyModal(false)
 
   return (
-    <nav className="navbar shadow-lg bg-neutral text-neutral-content">
+    <nav className="navbar fixed-top shadow-lg bg-neutral text-neutral-content">
       <div className="relative container mx-auto">
         <div className="flex-1 px-2 mx-2 hidden md:hidden lg:block">
           <div className="">

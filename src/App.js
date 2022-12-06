@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
-import Hero from "./components/layout/Hero";
+import Welcome from "./components/layout/Welcome";
 import Footer from "./components/layout/Footer";
 import Mission from "./components/layout/Mission";
 import ContactUs from "./components/layout/ContactUs";
@@ -19,7 +19,7 @@ function App() {
           path="/"
           element={
             <>
-              <Hero />
+              <Welcome />
               <Mission />
               <AboutUs />
               <ContactUs />
