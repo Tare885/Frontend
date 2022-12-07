@@ -9,7 +9,7 @@ function RegModal({ onClose, visible }) {
   const handleOnClose2 = () => setShowMyModal2(false);
 
   if (!visible) return null;
-
+  
   return (
     <div className="fixed inset-0 bg-zinc-900/80 backdrop-blur-sm flex justify-center items-center z-10">
       <img
@@ -21,15 +21,17 @@ function RegModal({ onClose, visible }) {
       />
       <MdClose
         onClick={onClose}
-        className="absolute top-0 right-0 m-10 text-2xl sm:text-4xl md:text-4xl lg:text-6xl cursor-pointer text-orange-500"
+        className="absolute top-0 right-0 hover:scale-110 transition-all m-10 text-2xl sm:text-4xl md:text-4xl lg:text-6xl cursor-pointer text-orange-500"
       />
       <div className="border border-gray-500 rounded-lg p-10">
         <h1 className="text-center text-3xl mb-5">CREATE AN ACCOUNT</h1>
         <div className="flex justify-between pl-5 pr-5 mb-5">
           <p>Already have an account?</p>
           <p
-            className="text-orange-500 cursor-pointer"
-            onClick={() => setShowMyModal2(true)}
+            className="text-orange-500 hover:scale-110 transition-all cursor-pointer"
+            onClick={() => {
+              setShowMyModal2(true) 
+              }}
           >
             Sign In
           </p>
