@@ -7,13 +7,30 @@ import RegModal from "./RegModal";
 
 function Navbar() {
   const [showMyModal, setShowMyModal] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
-  const handleOnClose = () => setShowMyModal(false)
+  const handleOnClose = () => setShowMyModal(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
 
   return (
-    <nav className="navbar fixed-top shadow-lg bg-neutral text-neutral-content">
-      <div className="relative container mx-auto">
-        <div className="flex-1 px-2 mx-2 hidden md:hidden lg:block">
+    <nav
+      className={
+        navbar
+          ? "navbar fixed top-0 z-10 shadow-lg bg-neutral text-neutral-content"
+          : "navbar fixed top-0 z-10 bg-transparent text-neutral-content"
+      }
+    >
+      <div className="relative container mx-auto mx-5">
+        <div className="flex-1 px-2 mx-2 hidden sm:block">
           <div className="">
             <div className="flex justify-center items-center">
               <Link to="/" className="btn btn-ghost rounded-btn">
@@ -22,6 +39,7 @@ function Navbar() {
               <Link to="/" className="btn btn-ghost rounded-btn">
                 Menu
               </Link>
+
               <Link to="/">
                 <img
                   src={logo}
