@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/layout/Navbar";
 import Welcome from "./components/layout/Welcome";
 import Footer from "./components/layout/Footer";
-import Mission from "./components/layout/Mission";
 import ContactUs from "./components/layout/ContactUs";
 import CoomingSoon from "./components/layout/pages/CoomingSoon";
 import AboutUs from "./components/layout/AboutUs";
+import Menu from "./components/layout/Menu";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           element={
             <>
               <Welcome />
-              <Mission />
+              <Menu />
               <AboutUs />
               <ContactUs />
             </>
